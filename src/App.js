@@ -1,10 +1,18 @@
 import './App.css';
 import Video from './components/Video';
 
+const obj={
+  title:'Wordpress Developer',
+  Channel:'rohitech',
+  Views:'1M',
+  time:'6 months ago'
+}
+
 function App() {
   return (
     <div className="App">
       {/* <h1>Videos</h1> */}
+      <Video {...obj} ></Video>
       <Video 
       title={"React Js Tutorial"} 
       Channel={'rohitprocode'} 
