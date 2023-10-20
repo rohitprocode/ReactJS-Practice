@@ -1,19 +1,56 @@
 import './App.css';
 import Video from './components/Video';
 
-const obj={
-  title:'Wordpress Developer',
-  Channel:'rohitech',
-  Views:'1M',
-  time:'6 months ago',
+const Videos = [{
+  title: 'Wordpress Developer',
+  Channel: 'rohitech',
+  Views: '1M',
+  time: '6 months ago',
+  verifiedData: false
+},
+{
+  title: 'React Developer',
+  Channel: 'rohitech',
+  Views: '149K',
+  time: '4 months ago',
   verifiedData: true
-}
+},
+{
+  title: 'Node Developer',
+  Channel: 'rohitech',
+  Views: '849K',
+  time: '5 months ago',
+  verifiedData: true
+},
+{
+  title: 'Mongo DB Developer',
+  Channel: 'rohitech',
+  Views: '49K',
+  time: '9 months ago',
+  verifiedData: false
+},
+{
+  title: 'Python Developer',
+  Channel: 'rohitech',
+  Views: '999K',
+  time: '12 months ago',
+  verifiedData: true
+}]
 
 function App() {
   return (
     <div className="App">
+      {Videos.map(video =>
+        <Video
+          title={video.title}
+          Channel={video.Channel}
+          Views={video.Views}
+          time={video.time}
+          verifiedData={video.verifiedData}
+        />
+      )}
       {/* <h1>Videos</h1> */}
-      <Video {...obj} ></Video>
+      {/* <Video {...obj} ></Video>
       <Video 
       title={"React Js Tutorial"} 
       Channel={'rohitprocode'} 
@@ -40,8 +77,8 @@ function App() {
       Channel={'rohitprocode'} 
       Views={'885K'} 
       time={"11 months ago"}
-      verifiedData={true} 
-      />
+      verifiedData={3} 
+      /> */}
 
     </div>
   );
