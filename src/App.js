@@ -47,6 +47,7 @@ function App() {
     <div className="App">
       {Videos.map(video =>
         <Video
+          key={video.id}
           title={video.title}
           Channel={video.Channel}
           Views={video.Views}
