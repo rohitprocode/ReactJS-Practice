@@ -1,13 +1,13 @@
 import React from 'react'
 import verified_logo from './verified_logo.png'
 import './Video.css'
-export default function Video({ title, Channel, Views, time, verifiedData }) {
+export default function Video({ title, Channel, Views, time, verifiedData,id}) {
     
     return (
         <>
             <div className='container' >
                 <div className="pic">
-                    <img src="https://wallpapers.com/images/high/textured-solid-grey-image-vignette-fogxulntlildtj4p.webp" alt="Flower Image" />
+                    <img src={`https://picsum.photos/id/${id}/180/100`} />
                 </div>
                 <div className="title">{title}</div>
                 {/* <div className='channel'>{Channel} {verifiedData ? <img src={verified_logo} alt="verified_logo"/> : null}</div> */}
