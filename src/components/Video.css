@@ -1,0 +1,10 @@
+.container{
+    background-color: grey;
+    width: 100%;
+    color:#8b0000;
+    font-weight: 800;
+}
+
+.pic img{
+    width: 10vw;
+}
