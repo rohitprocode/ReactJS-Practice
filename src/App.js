@@ -1,4 +1,5 @@
 import './App.css';
+import PlayButton from './components/PlayButton';
 import Video from './components/Video';
 import Videos from './data/data'
 
@@ -46,7 +47,10 @@ function App() {
       time={"11 months ago"}
       verifiedData={3} 
       /> */}
-
+    <div style={{clear:'both'}} >
+    <PlayButton Message={"Hey Play Button Clicked"} Action={'Play'} />
+    <PlayButton Message={"Hey Pause Button Clicked"} Action={'Pause'} />
+    </div>
     </div>
   );
 }
