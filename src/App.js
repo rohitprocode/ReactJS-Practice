@@ -50,6 +50,7 @@ function App() {
     <div style={{clear:'both'}} >
     <PlayButton Message={"Hey Play Button Clicked"} >Play</PlayButton>
     <PlayButton Message={"Hey Pause Button Clicked"} >Pause</PlayButton>
+    
     </div>
     </div>
   );
