@@ -1,9 +1,9 @@
 import React from 'react'
 import './PlayButton.css'
 
-function PlayButton({Message,children}) {
+function PlayButton({Message,children,Action}) {
   return (
-      <button onClick={()=>console.log(Message)}>{children}</button>
+      <button onClick={()=>(Message)}>{children}</button>
   )
 }
 

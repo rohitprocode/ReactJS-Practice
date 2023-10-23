@@ -48,8 +48,8 @@ function App() {
       verifiedData={3} 
       /> */}
     <div style={{clear:'both'}} >
-    <PlayButton Message={"Hey Play Button Clicked"}>Play</PlayButton>
-    <PlayButton Message={"Hey Pause Button Clicked"}>Pause</PlayButton>
+    <PlayButton Message={"Hey Play Button Clicked"} >Play</PlayButton>
+    <PlayButton Message={"Hey Pause Button Clicked"} >Pause</PlayButton>
     </div>
     </div>
   );
