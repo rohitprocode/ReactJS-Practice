@@ -4,10 +4,10 @@ import './PlayButton.css'
 function PlayButton({ Message, children, onStart, onStop }) {
   let playing = true;
   function clickHandler() {
-    if (playing){
+    if (playing) {
       onStart()
       playing = false
-    }else{
+    } else {
       onStop()
       playing = true;
     }

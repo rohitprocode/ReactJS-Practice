@@ -47,11 +47,11 @@ function App() {
       time={"11 months ago"}
       verifiedData={3} 
       /> */}
-    <div style={{clear:'both'}} >
-    <PlayButton Message={"Hey Play Button Clicked"} onStart={()=>console.log("Start")} onStop={()=>console.log("Stop")} >Play</PlayButton>
-    {/* <PlayButton Message={"Hey Pause Button Clicked"} Action={console.log} >Pause</PlayButton> */}
-    
-    </div>
+      <div style={{ clear: 'both' }} >
+        <PlayButton Message={"Hey Play Button Clicked"} onStart={() => console.log("Start")} onStop={() => console.log("Stop")} >Play</PlayButton>
+        {/* <PlayButton Message={"Hey Pause Button Clicked"} Action={console.log} >Pause</PlayButton> */}
+
+      </div>
     </div>
   );
 }
