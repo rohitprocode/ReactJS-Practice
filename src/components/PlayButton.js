@@ -3,7 +3,8 @@ import './PlayButton.css'
 
 function PlayButton({ Message, children, onStart, onStop }) {
   let playing = true;
-  function clickHandler() {
+  function clickHandler(e) {
+    e.stopPropagation()
     if (playing) {
       onStart()
       playing = false

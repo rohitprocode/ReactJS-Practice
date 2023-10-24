@@ -5,7 +5,7 @@ import Videos from './data/data'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" onClick={()=>console.log("App Clicked")} >
       {Videos.map(video =>
         <Video
           key={video.id}
