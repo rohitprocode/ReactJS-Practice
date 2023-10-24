@@ -16,8 +16,7 @@ function App() {
           verifiedData={video.verifiedData}
           id={video.id}
         />
-      )}
-      {/* <h1>Videos</h1> */}
+      )}FFF
       {/* <Video {...obj} ></Video>
       <Video 
       title={"React Js Tutorial"} 
