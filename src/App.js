@@ -15,7 +15,9 @@ function App() {
           time={video.time}
           verifiedData={video.verifiedData}
           id={video.id}
-        />
+        >
+          <PlayButton Message={"Hey Play Button Clicked"} onStart={() => console.log("Start",video.title)} onStop={() => console.log("Stop",video.title)}>{video.title}</PlayButton>
+        </Video>
       )}FFF
       {/* <Video {...obj} ></Video>
       <Video 
@@ -47,7 +49,8 @@ function App() {
       verifiedData={3} 
       /> */}
       <div style={{ clear: 'both' }} >
-        <PlayButton Message={"Hey Play Button Clicked"} onStart={() => console.log("Start")} onStop={() => console.log("Stop")} >Play</PlayButton>
+
+
         {/* <PlayButton Message={"Hey Pause Button Clicked"} Action={console.log} >Pause</PlayButton> */}
 
       </div>
