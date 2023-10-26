@@ -1,4 +1,5 @@
 import './App.css';
+import Counter from './components/Counter';
 import PlayButton from './components/PlayButton';
 import Video from './components/Video';
 import Videos from './data/data'
@@ -18,7 +19,7 @@ function App() {
         >
           <PlayButton Message={"Hey Play Button Clicked"} onStart={() => console.log("Start",video.title)} onStop={() => console.log("Stop",video.title)}>{video.title}</PlayButton>
         </Video>
-      )}FFF
+      )}
       {/* <Video {...obj} ></Video>
       <Video 
       title={"React Js Tutorial"} 
@@ -52,7 +53,7 @@ function App() {
 
 
         {/* <PlayButton Message={"Hey Pause Button Clicked"} Action={console.log} >Pause</PlayButton> */}
-
+      <Counter/>
       </div>
     </div>
   );
