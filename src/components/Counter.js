@@ -5,9 +5,7 @@ function Counter() {
    const [number,setNumber] = useState(0)
     function handleClick(e){
       e.stopPropagation();
-      setTimeout(()=>{
-        setNumber(number => number +1)
-      },2000)
+      setNumber(number => number +1)
       console.log(number)
     }
 
