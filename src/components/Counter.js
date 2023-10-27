@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 
 function Counter() {
-    // const [number,setnumber] = useState(0);
-    let number = 0;
+  console.log("Counter Render")
+   const [number,setNumber] = useState(0)
     function handleClick(e){
-      e.stopPropagation()
-      number++;
+      e.stopPropagation();
+      setTimeout(()=>{
+        setNumber(number => number +1)
+      },2000)
       console.log(number)
-        // setnumber(number+1)
     }
 
   return (
