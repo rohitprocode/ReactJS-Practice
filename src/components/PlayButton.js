@@ -1,21 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './PlayButton.css'
 
 function PlayButton({ Message, children, onStart, onStop }) {
-  let playing = true;
+  const [playing,setPlaying] = useState(true);
   function clickHandler(e) {
     e.stopPropagation()
-    if (playing) {
-      onStart()
-      playing = false
-    } else {
-      onStop()
-      playing = true;
+    if (playing) onStart()
+      else onStop();
+    
+      setPlaying(!playing);
+      
     }
-  }
 
   return (
-    <button onClick={clickHandler}>{children}</button>
+    <button onClick={clickHandler}>{children} : {playing ? '>' : '=' }</button>
   )
 }
 

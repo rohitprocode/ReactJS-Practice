@@ -8,7 +8,7 @@ function Counter() {
       setNumber(number => number +1)
       console.log(number)
     }
-
+ 
   return (
     <>
      <h1 style={{color:'white'}}>{number}</h1> 
