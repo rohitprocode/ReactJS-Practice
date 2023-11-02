@@ -1,13 +1,27 @@
+import { useState } from 'react';
 import './App.css';
 import Counter from './components/Counter';
 import PlayButton from './components/PlayButton';
 import Video from './components/Video';
-import Videos from './data/data'
+import videoDB from './data/data'
 
 function App() {
+  const [videos,setVideos] = useState(videoDB)
   return (
     <div className="App" onClick={()=>console.log("App Clicked")} >
-      {Videos.map(video =>
+      <div>
+        <button onClick={()=>setVideos(
+          [...videos,{
+            title: 'Java Developer',
+            Channel: 'rohitech',
+            Views: '999K',
+            time: '12 months ago',
+            verifiedData: true,
+            id:videos.length+1
+          }]
+        )} >Add Button</button>
+      </div>
+      {videos.map(video =>
         <Video
           key={video.id}
           title={video.title}

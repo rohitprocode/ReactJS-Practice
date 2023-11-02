@@ -1,6 +1,7 @@
 import React from 'react'
 import verified_logo from './verified_logo.png'
 import './Video.css'
+
 export default function Video({ title, Channel, Views, time, verifiedData,id,children}) {
     
     return (

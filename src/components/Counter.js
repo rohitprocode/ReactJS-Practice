@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 function Counter() {
-  console.log("Counter Render")
+  
    const [number,setNumber] = useState(0)
     function handleClick(e){
       e.stopPropagation();
