@@ -13,7 +13,7 @@ function PlayButton({ Message, children, onStart, onStop }) {
     }
 
   return (
-    <button onClick={clickHandler}>{children} : {playing ? '>' : '=' }</button>
+    <button onClick={clickHandler}>{children} : {playing ? '🔈' : '🔊' }</button>
   )
 }
 
