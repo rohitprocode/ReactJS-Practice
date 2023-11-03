@@ -10,7 +10,9 @@ function App() {
   return (
     <div className="App" onClick={()=>console.log("App Clicked")} >
       <div>
-        <button onClick={()=>setVideos(
+        <button onClick={
+          ()=>
+          setVideos(
           [...videos,{
             title: 'Java Developer',
             Channel: 'rohitech',
@@ -18,8 +20,8 @@ function App() {
             time: '12 months ago',
             verifiedData: true,
             id:videos.length+1
-          }]
-        )} >Add Button</button>
+          }])
+        } >Add Button</button>
       </div>
       {videos.map(video =>
         <Video
