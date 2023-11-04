@@ -8,9 +8,7 @@ function PlayButton({ Message, children, onStart, onStop }) {
     e.stopPropagation()
     if (playing) onStart()
       else onStop();
-    
       setPlaying(!playing);
-      
     }
 
   return (
