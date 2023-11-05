@@ -4,12 +4,14 @@ import Counter from './components/Counter';
 import PlayButton from './components/PlayButton';
 import Video from './components/Video';
 import videoDB from './data/data'
+import AddVideo from './components/AddVideo';
 
 function App() {
   const [videos,setVideos] = useState(videoDB)
   return (
     <div className="App" onClick={()=>console.log("App Clicked")} >
-      <div>
+      {<AddVideo/>}
+      {/* <div>
         <button onClick={
           ()=>
           setVideos(
@@ -22,7 +24,7 @@ function App() {
             id:videos.length+1
           }])
         } >Add Button</button>
-      </div>
+      </div> */}
       {videos.map(video =>
         <Video
           key={video.id}
@@ -69,7 +71,7 @@ function App() {
 
 
         {/* <PlayButton Message={"Hey Pause Button Clicked"} Action={console.log} >Pause</PlayButton> */}
-      <Counter/>
+      {/* <Counter/> */}
       </div>
     </div>
   );
