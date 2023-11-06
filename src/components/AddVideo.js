@@ -12,13 +12,17 @@ function AddVideo(){
         console.log(e.target.value , e.target.name);
         setVideo({...video,
         [e.target.name] : e.target.value})
+        // console.log(video)
+    }
+    function handleSubmit(e){
+        e.preventDefault();
         console.log(video)
     }
     return(
         <form>
             <input type="text" name="title" onChange={clickHandler} placeholder='Title' />
             <input type="text" name='views' onChange={clickHandler} placeholder='Views'/>
-            <button>Add Video</button>
+            <button onClick={handleSubmit} >Add Video</button>
         </form>
     )
 }
