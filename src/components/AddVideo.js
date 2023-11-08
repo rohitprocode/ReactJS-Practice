@@ -19,6 +19,7 @@ function AddVideo(){
         e.preventDefault();
         console.log(video)
     }
+    
     return(
         <form>
             <input type="text" name="title" onChange={clickHandler} placeholder='Title' />
