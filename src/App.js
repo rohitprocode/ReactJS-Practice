@@ -8,21 +8,20 @@ import AddVideo from './components/AddVideo';
 
 function App() {
   const [videos,setVideos] = useState(videoDB)
+
+  function addVideos(video){
+    setVideos(
+      [...videos,
+      {...video, id : videos.length+1}
+    ]);
+  }
   return (
     <div className="App" onClick={()=>console.log("App Clicked")} >
-      {<AddVideo/>}
+      <AddVideo addVideo={addVideos}></AddVideo>
       {/* <div>
         <button onClick={
           ()=>
-          setVideos(
-          [...videos,{
-            title: 'Java Developer',
-            Channel: 'rohitech',
-            Views: '999K',
-            time: '12 months ago',
-            verifiedData: true,
-            id:videos.length+1
-          }])
+          
         } >Add Button</button>
       </div> */}
       {videos.map(video =>

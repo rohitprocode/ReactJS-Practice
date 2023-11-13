@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import './AddVideo.css'
 
-function AddVideo(){
+function AddVideo({addVideo}){
     const [video,setVideo] = useState({
         Channel: 'rohitech',
         time: '6 months ago',
         verifiedData: false
     })
     function clickHandler(e){
-        e.stopPropagation();
+        // e.stopPropagation();
         console.log(e.target.value , e.target.name);
         setVideo({...video,
         [e.target.name] : e.target.value})
@@ -16,7 +16,8 @@ function AddVideo(){
     }
     function handleSubmit(e){
         e.preventDefault();
-        console.log(video)
+        addVideo(video)
+        // console.log(video)
     }
     
     return(
