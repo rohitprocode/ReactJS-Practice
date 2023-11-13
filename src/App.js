@@ -68,8 +68,6 @@ function App() {
       verifiedData={3} 
       /> */}
       <div style={{ clear: 'both' }} >
-
-
         {/* <PlayButton Message={"Hey Pause Button Clicked"} Action={console.log} >Pause</PlayButton> */}
       {/* <Counter/> */}
       </div>

@@ -1,11 +1,5 @@
 // Videos Data 
 
-
-
-
-
-
-
 const Videos = [{
     title: 'Wordpress Developer',
     Channel: 'rohitech',
@@ -47,5 +41,4 @@ const Videos = [{
     id:5
   }]
 
-  
   export default Videos

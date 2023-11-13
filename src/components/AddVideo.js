@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import './AddVideo.css'
 
-
-
-
 function AddVideo(){
     const [video,setVideo] = useState({
         Channel: 'rohitech',
@@ -30,6 +27,5 @@ function AddVideo(){
         </form>
     )
 }
-
 
 export default AddVideo 
