@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import './App.css';
 import Counter from './components/Counter';
-import PlayButton from './components/PlayButton';
 import Video from './components/Video';
 import videoDB from './data/data'
 import AddVideo from './components/AddVideo';
+import VideoList from './components/VideoList';
 
 function App() {
   const [videos,setVideos] = useState(videoDB)
@@ -18,25 +18,7 @@ function App() {
   return (
     <div className="App" onClick={()=>console.log("App Clicked")} >
       <AddVideo addVideo={addVideos}></AddVideo>
-      {/* <div>
-        <button onClick={
-          ()=>
-          
-        } >Add Button</button>
-      </div> */}
-      {videos.map(video =>
-        <Video
-          key={video.id}
-          title={video.title}
-          Channel={video.Channel}
-          Views={video.Views}
-          time={video.time}
-          verifiedData={video.verifiedData}
-          id={video.id}
-        >
-          <PlayButton Message={"Hey Play Button Clicked"} onStart={() => console.log("Start",video.title)} onStop={() => console.log("Stop",video.title)}>{video.title}</PlayButton>
-        </Video>
-      )}
+      <VideoList videos={videos} ></VideoList>
       {/* <Video {...obj} ></Video>
       <Video 
       title={"React Js Tutorial"} 
