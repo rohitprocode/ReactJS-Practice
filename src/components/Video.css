@@ -3,7 +3,14 @@
     width: 15em;
     margin: 0 0.2em;
     float: left;
+    position: relative;
 }
+
+.deleteV{
+    position: absolute;
+    right: 90px;
+}
+
 .pic img{
     width: 10vw;
 }
