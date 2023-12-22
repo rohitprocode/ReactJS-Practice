@@ -9,35 +9,35 @@ const initialState = {
     Views: ''
 }
 
-function AddVideo({ addVideo,editableVideo }) {
+function AddVideo({ addVideo, editableVideo ,updateVideo}) {
     const [video, setVideo] = useState(initialState)
     function clickHandler(e) {
-        // e.stopPropagation();
-        // console.log(e.target.value, e.target.name);
         setVideo({
             ...video,
             [e.target.name]: e.target.value
         })
-        // console.log(video)
     }
     function handleSubmit(e) {
         e.preventDefault();
-        addVideo(video)
-        setVideo(initialState)
-        // console.log(video)
+        if (editableVideo) {
+            updateVideo(video)
+        } else {
+            addVideo(video)
+            setVideo(initialState)
+        }
     }
 
-    useEffect(()=>{
-        if(editableVideo){
-        setVideo(editableVideo)
+    useEffect(() => {
+        if (editableVideo) {
+            setVideo(editableVideo)
         }
-    },[editableVideo])
+    }, [editableVideo])
 
     return (
         <form>
             <input type="text" name="title" onChange={clickHandler} placeholder='Title' value={video.title} />
             <input type="text" name='Views' onChange={clickHandler} placeholder='Views' value={video.Views} />
-            <button onClick={handleSubmit} >Add Video</button>
+            <button onClick={handleSubmit} >{editableVideo ? "Edit Video" : "Add Video"}</button>
         </form>
     )
 }

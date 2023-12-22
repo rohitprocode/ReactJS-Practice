@@ -27,9 +27,17 @@ function App() {
     setEditableVideo(videos.find(editzz => editzz.id === id))
   }
 
+  function updateVideo(video){
+    // console.log(video)
+    const index = videos.findIndex(v=>v.id===video.id)
+    const newVideos = [...videos]
+    newVideos.splice(index,1,video)
+    setVideos(newVideos)
+  }
+
   return (
     <div className="App" onClick={() => console.log("App Clicked")} >
-      <AddVideo addVideo={addVideos} editableVideo={editableVideo} ></AddVideo>
+      <AddVideo addVideo={addVideos} editableVideo={editableVideo} updateVideo={updateVideo} ></AddVideo>
       <VideoList videos={videos} deleteVideos={deleteVideos} editVideos={editVideos} ></VideoList>
 
       <div style={{ clear: 'both' }} >
