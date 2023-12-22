@@ -2,12 +2,12 @@ import React from 'react'
 import verified_logo from './verified_logo.png'
 import './Video.css'
 
-export default function Video({ title, Channel, Views, time, verifiedData,id,children,deleteVideos}) {
-    
+export default function Video({ title, Channel, Views, time, verifiedData,id,children,deleteVideos,editVideos}) {
     return (
         <>
             <div className='container' >
                 <button className='deleteV' onClick={()=>deleteVideos(id)}>X</button>
+                <button className='editV' onClick={()=>editVideos(id)}>Edit</button>
                 <div className="pic">
                     <img src={`https://picsum.photos/id/${id}/180/100`} alt="Thumbnail"/>
                 </div>

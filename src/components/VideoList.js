@@ -1,7 +1,7 @@
 import React from 'react'
 import PlayButton from './PlayButton';
 import Video from './Video';
-function VideoList({videos,deleteVideos}) {
+function VideoList({videos,deleteVideos,editVideos}) {
   return (
     <>
      {videos.map(video =>
@@ -14,6 +14,7 @@ function VideoList({videos,deleteVideos}) {
       verifiedData={video.verifiedData}
       id={video.id}
       deleteVideos={deleteVideos}
+      editVideos={editVideos}
     >
       <PlayButton Message={"Hey Play Button Clicked"} onStart={() => console.log("Start",video.title)} onStop={() => console.log("Stop",video.title)}>{video.title}</PlayButton>
     </Video>

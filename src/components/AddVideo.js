@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './AddVideo.css'
 
 const initialState = {
@@ -9,7 +9,7 @@ const initialState = {
     Views: ''
 }
 
-function AddVideo({ addVideo }) {
+function AddVideo({ addVideo,editableVideo }) {
     const [video, setVideo] = useState(initialState)
     function clickHandler(e) {
         // e.stopPropagation();
@@ -26,6 +26,12 @@ function AddVideo({ addVideo }) {
         setVideo(initialState)
         // console.log(video)
     }
+
+    useEffect(()=>{
+        if(editableVideo){
+        setVideo(editableVideo)
+        }
+    },[editableVideo])
 
     return (
         <form>

@@ -11,6 +11,11 @@
     right: 90px;
 }
 
+.editV{
+    position: absolute;
+    left: 0px;
+}
+
 .pic img{
     width: 10vw;
 }
