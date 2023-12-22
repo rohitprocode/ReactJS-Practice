@@ -9,7 +9,7 @@ export default function Video({ title, Channel, Views, time, verifiedData,id,chi
             <div className='container' >
                 <button className='deleteV' onClick={()=>deleteVideos(id)}>X</button>
                 <div className="pic">
-                    <img src={`https://picsum.photos/id/${id}/180/100`} />
+                    <img src={`https://picsum.photos/id/${id}/180/100`} alt="Thumbnail"/>
                 </div>
                 <div className="title">{title}</div>
                 <div className="channel">{Channel}{verifiedData && <img src={verified_logo} alt='verified_logo'/>}</div>
