@@ -9,7 +9,7 @@ const initialState = {
     Views: ''
 }
 
-function AddVideo({ addVideo, editableVideo ,updateVideo}) {
+function AddVideo({ dispatch, editableVideo}) {
     const [video, setVideo] = useState(initialState)
     function clickHandler(e) {
         setVideo({
@@ -20,9 +20,9 @@ function AddVideo({ addVideo, editableVideo ,updateVideo}) {
     function handleSubmit(e) {
         e.preventDefault();
         if (editableVideo) {
-            updateVideo(video)
+            dispatch({type : 'UPDATE', payload:video})
         } else {
-            addVideo(video)
+            dispatch({type : 'ADD' , payload:video })
             setVideo(initialState)
         }
     }
