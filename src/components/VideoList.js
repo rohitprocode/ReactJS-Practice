@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PlayButton from './PlayButton';
 import Video from './Video';
-function VideoList({videos,dispatch,editVideos}) {
+import VideoContext from './context/VideoContext';
+function VideoList({editVideos}) {
+  const videos = useContext(VideoContext)
   return (
     <>
      {videos.map(video =>
@@ -13,7 +15,6 @@ function VideoList({videos,dispatch,editVideos}) {
       time={video.time}
       verifiedData={video.verifiedData}
       id={video.id}
-      dispatch={dispatch}
       editVideos={editVideos}
     >
       <PlayButton Message={"Hey Play Button Clicked"} onStart={() => console.log("Start",video.title)} onStop={() => console.log("Stop",video.title)}>{video.title}</PlayButton>

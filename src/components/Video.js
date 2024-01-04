@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import verified_logo from './verified_logo.png'
 import './Video.css'
-import ThemeContext from './context/ThemeContext'
+import VideoDispatchContext from './context/VideoDispatchContext'
  
-export default function Video({ title, Channel, Views, time, verifiedData, id, children, dispatch, editVideos }) {
+export default function Video({ title, Channel, Views, time, verifiedData, id, children, editVideos }) {
+    const dispatch = useContext(VideoDispatchContext)
     return (
         <>
             <div className={`container `} >

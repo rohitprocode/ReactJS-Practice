@@ -1,13 +1,16 @@
-import { useContext, useReducer, useState } from "react";
+import { useReducer, useState } from "react";
 import "./App.css";
 import videoDB from "./data/data";
 import AddVideo from "./components/AddVideo";
 import VideoList from "./components/VideoList";
 import ThemeContext from "./components/context/ThemeContext";
+import VideoContext from "./components/context/VideoContext";
+import VideoDispatchContext from "./components/context/VideoDispatchContext";
 
 function App() {
   const [editableVideo, setEditableVideo] = useState(null);
-  const [themeMode, setThemeMode] = useState("lightMode");
+
+  const [themeMode, setThemeMode] = useState(ThemeContext);
 
   function videosReducer(videos, action) {
     switch (action.type) {
@@ -36,25 +39,28 @@ function App() {
 
   return (
     <ThemeContext.Provider value={themeMode}>
-      <div
-        className={`App ${themeMode} `}
-        onClick={() => console.log("App Clicked")}
-      >
-        <button
-          onClick={() =>
-            setThemeMode(themeMode == "darkMode" ? "lightMode" : "darkMode")
-          }
-        >
-          SwitchMode
-        </button>
-        <AddVideo dispatch={dispatch} editableVideo={editableVideo}></AddVideo>
-        <VideoList
-          videos={videos}
-          dispatch={dispatch}
-          editVideos={editVideos}
-        ></VideoList>
-        <div style={{ clear: "both" }}></div>
-      </div>
+      <VideoContext.Provider value={videos}>
+        <VideoDispatchContext.Provider value={dispatch} >
+          <div
+            className={`App ${themeMode} `}
+            onClick={() => console.log("App Clicked")}
+          >
+            <button
+              onClick={() =>
+                setThemeMode(themeMode === "darkMode" ? "lightMode" : "darkMode")
+              }
+            >
+              SwitchMode
+            </button>
+            <AddVideo
+              dispatch={dispatch}
+              editableVideo={editableVideo}
+            ></AddVideo>
+            <VideoList editVideos={editVideos}></VideoList>
+            <div style={{ clear: "both" }}></div>
+          </div>
+        </VideoDispatchContext.Provider>
+      </VideoContext.Provider>
     </ThemeContext.Provider>
   );
 }
