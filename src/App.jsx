@@ -3,9 +3,9 @@ import "./App.css";
 import videoDB from "./data/data";
 import AddVideo from "./components/AddVideo";
 import VideoList from "./components/VideoList";
-import ThemeContext from "./components/context/ThemeContext";
-import VideoContext from "./components/context/VideoContext";
-import VideoDispatchContext from "./components/context/VideoDispatchContext";
+import ThemeContext from "./context/ThemeContext";
+import VideoContext from "./context/VideoContext";
+import VideoDispatchContext from "./context/VideoDispatchContext";
 
 function App() {
   const [editableVideo, setEditableVideo] = useState(null);
@@ -40,14 +40,16 @@ function App() {
   return (
     <ThemeContext.Provider value={themeMode}>
       <VideoContext.Provider value={videos}>
-        <VideoDispatchContext.Provider value={dispatch} >
+        <VideoDispatchContext.Provider value={dispatch}>
           <div
             className={`App ${themeMode} `}
             onClick={() => console.log("App Clicked")}
           >
             <button
               onClick={() =>
-                setThemeMode(themeMode === "darkMode" ? "lightMode" : "darkMode")
+                setThemeMode(
+                  themeMode === "darkMode" ? "lightMode" : "darkMode"
+                )
               }
             >
               SwitchMode

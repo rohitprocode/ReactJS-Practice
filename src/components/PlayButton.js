@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import './PlayButton.css'
-import ThemeContext from './context/ThemeContext';
+import ThemeContext from '../context/ThemeContext';
 
 function PlayButton({ Message, children, onStart, onStop }) {
  

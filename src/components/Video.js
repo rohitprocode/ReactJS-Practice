@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import verified_logo from './verified_logo.png'
 import './Video.css'
-import VideoDispatchContext from './context/VideoDispatchContext'
+import useVideoDispatchHook from '../hooks/VideoDispatchHook'
  
 export default function Video({ title, Channel, Views, time, verifiedData, id, children, editVideos }) {
-    const dispatch = useContext(VideoDispatchContext)
+    const dispatch = useVideoDispatchHook()
     return (
         <>
             <div className={`container `} >
