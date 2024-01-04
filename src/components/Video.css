@@ -22,11 +22,11 @@
 .title{
     font-weight: bold;
     margin-bottom: 1em;
-    color: white;
+    /* color: white; */
 }
 .channel, .views{
     font-size: small;
-    color: #ccc;
+    /* color: #ccc; */
     margin-bottom: 0.2em;
 }
 
@@ -36,4 +36,24 @@
 
 .channel img{
     width: 14px;
+}
+
+.darkMode{
+    background-color: black;
+    color: whitesmoke;
+
+    button {
+        background-color: black;
+        color: whitesmoke;
+    }
+}
+
+.lightMode{
+    background-color: whitesmoke;
+    color: black;
+
+    button {
+        background-color: whitesmoke;
+        color: black;
+    }
 }

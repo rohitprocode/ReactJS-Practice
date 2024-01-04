@@ -3,3 +3,13 @@ input{
     margin-bottom: 10px;
     padding: 1rem;
 }
+
+.darkMode{
+    background-color: black;
+    color: whitesmoke;
+}
+
+.lightMode{
+    background-color: whitesmoke;
+    color: black;
+}

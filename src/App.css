@@ -4,6 +4,11 @@
   height: 100vh;
 }
 
-.darkmode{
-  
+.darkMode{
+  background-color: black ;
 }
+
+.lightMode{
+  background-color: hsl(0, 5%, 88%);
+}
+

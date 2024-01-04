@@ -30,14 +30,18 @@ function App() {
 
   const [videos, dispatch] = useReducer(videosReducer, videoDB);
 
-  const themeContext = useContext(ThemeContext)
+  const themeContext = useContext(ThemeContext);
+  console.log(themeContext);
 
   function editVideos(id) {
     setEditableVideo(videos.find((editzz) => editzz.id === id));
   }
 
   return (
-    <div className={`App ${themeContext}`} onClick={() => console.log("App Clicked")}>
+    <div
+      className={`App ${themeContext}`}
+      onClick={() => console.log("App Clicked")}
+    >
       <AddVideo dispatch={dispatch} editableVideo={editableVideo}></AddVideo>
       <VideoList
         videos={videos}
