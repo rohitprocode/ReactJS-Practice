@@ -37,23 +37,3 @@
 .channel img{
     width: 14px;
 }
-
-.darkMode{
-    background-color: black;
-    color: whitesmoke;
-
-    button {
-        background-color: black;
-        color: whitesmoke;
-    }
-}
-
-.lightMode{
-    background-color: whitesmoke;
-    color: black;
-
-    button {
-        background-color: whitesmoke;
-        color: black;
-    }
-}

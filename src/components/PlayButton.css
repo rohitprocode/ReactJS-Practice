@@ -9,13 +9,3 @@ button:hover{
     background-color: darkblue;
     color: white;
 }
-
-.darkMode{
-    background-color: black;
-    color: whitesmoke;
-}
-
-.lightMode{
-    background-color: whitesmoke;
-    color: black;
-}

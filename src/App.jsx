@@ -3,11 +3,11 @@ import "./App.css";
 import videoDB from "./data/data";
 import AddVideo from "./components/AddVideo";
 import VideoList from "./components/VideoList";
-import { type } from "@testing-library/user-event/dist/type";
 import ThemeContext from "./components/context/ThemeContext";
 
 function App() {
   const [editableVideo, setEditableVideo] = useState(null);
+  const [themeMode, setThemeMode] = useState("lightMode");
 
   function videosReducer(videos, action) {
     switch (action.type) {
@@ -30,26 +30,32 @@ function App() {
 
   const [videos, dispatch] = useReducer(videosReducer, videoDB);
 
-  const themeContext = useContext(ThemeContext);
-  console.log(themeContext);
-
   function editVideos(id) {
     setEditableVideo(videos.find((editzz) => editzz.id === id));
   }
 
   return (
-    <div
-      className={`App ${themeContext}`}
-      onClick={() => console.log("App Clicked")}
-    >
-      <AddVideo dispatch={dispatch} editableVideo={editableVideo}></AddVideo>
-      <VideoList
-        videos={videos}
-        dispatch={dispatch}
-        editVideos={editVideos}
-      ></VideoList>
-      <div style={{ clear: "both" }}></div>
-    </div>
+    <ThemeContext.Provider value={themeMode}>
+      <div
+        className={`App ${themeMode} `}
+        onClick={() => console.log("App Clicked")}
+      >
+        <button
+          onClick={() =>
+            setThemeMode(themeMode == "darkMode" ? "lightMode" : "darkMode")
+          }
+        >
+          SwitchMode
+        </button>
+        <AddVideo dispatch={dispatch} editableVideo={editableVideo}></AddVideo>
+        <VideoList
+          videos={videos}
+          dispatch={dispatch}
+          editVideos={editVideos}
+        ></VideoList>
+        <div style={{ clear: "both" }}></div>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

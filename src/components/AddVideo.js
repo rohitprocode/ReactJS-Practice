@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
 import './AddVideo.css'
-import ThemeContext from './context/ThemeContext';
 
 const initialState = {
     Channel: 'rohitech',
@@ -34,13 +33,11 @@ function AddVideo({ dispatch, editableVideo}) {
         }
     }, [editableVideo])
 
-    const theme = useContext(ThemeContext)
-
     return (
-        <form>
-            <input className={theme} type="text" name="title" onChange={clickHandler} placeholder='Title' value={video.title} />
-            <input className={theme} type="text" name='Views' onChange={clickHandler} placeholder='Views' value={video.Views} />
-            <button className={theme} onClick={handleSubmit} >{editableVideo ? "Edit Video" : "Add Video"}</button>
+        <form >
+            <input type="text" name="title" onChange={clickHandler} placeholder='Title' value={video.title} />
+            <input type="text" name='Views' onChange={clickHandler} placeholder='Views' value={video.Views} />
+            <button  onClick={handleSubmit} >{editableVideo ? "Edit Video" : "Add Video"}</button>
         </form>
     )
 }

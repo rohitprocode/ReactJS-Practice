@@ -4,10 +4,9 @@ import './Video.css'
 import ThemeContext from './context/ThemeContext'
  
 export default function Video({ title, Channel, Views, time, verifiedData, id, children, dispatch, editVideos }) {
-    const theme = useContext(ThemeContext)
     return (
         <>
-            <div className={`container ${theme}`} >
+            <div className={`container `} >
                 <button className="deleteV"  onClick={() => dispatch({ type: 'DELETE', payload: id })}>X</button>
                 <button className='editV' onClick={() => editVideos(id)}>Edit</button>
                 <div className="pic">
