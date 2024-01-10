@@ -6,6 +6,7 @@ import VideoList from "./components/VideoList";
 import ThemeContext from "./context/ThemeContext";
 import VideoContext from "./context/VideoContext";
 import VideoDispatchContext from "./context/VideoDispatchContext";
+import Counter from "./components/Counter";
 
 function App() {
   const [editableVideo, setEditableVideo] = useState(null);
@@ -59,7 +60,9 @@ function App() {
               editableVideo={editableVideo}
             ></AddVideo>
             <VideoList editVideos={editVideos}></VideoList>
-            <div style={{ clear: "both" }}></div>
+            <div style={{ clear: "both" }}>
+              <Counter/>
+            </div>
           </div>
         </VideoDispatchContext.Provider>
       </VideoContext.Provider>

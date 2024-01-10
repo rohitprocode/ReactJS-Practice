@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import './AddVideo.css'
 
 const initialState = {
@@ -11,6 +11,7 @@ const initialState = {
 
 function AddVideo({ dispatch, editableVideo}) {
     const [video, setVideo] = useState(initialState)
+    const InputRef = useRef(null)
     function clickHandler(e) {
         setVideo({
             ...video,
@@ -31,11 +32,12 @@ function AddVideo({ dispatch, editableVideo}) {
         if (editableVideo) {
             setVideo(editableVideo)
         }
+        InputRef.current.focus()
     }, [editableVideo])
 
     return (
         <form >
-            <input type="text" name="title" onChange={clickHandler} placeholder='Title' value={video.title} />
+            <input ref={InputRef} type="text" name="title" onChange={clickHandler} placeholder='Title' value={video.title} />
             <input type="text" name='Views' onChange={clickHandler} placeholder='Views' value={video.Views} />
             <button  onClick={handleSubmit} >{editableVideo ? "Edit Video" : "Add Video"}</button>
         </form>
